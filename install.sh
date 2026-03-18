@@ -63,7 +63,24 @@ main() {
     TMPDIR=$(mktemp -d)
     trap 'rm -rf "$TMPDIR"' EXIT
 
+    CHECKSUMS_URL="https://github.com/${REPO}/releases/download/v${VERSION}/checksums-sha256.txt"
+
     curl -fsSL "$URL" -o "${TMPDIR}/${ARCHIVE}"
+    curl -fsSL "$CHECKSUMS_URL" -o "${TMPDIR}/checksums-sha256.txt"
+
+    # Verify checksum
+    EXPECTED=$(grep "${ARCHIVE}" "${TMPDIR}/checksums-sha256.txt" | cut -d' ' -f1)
+    if [ -z "$EXPECTED" ]; then
+        echo "No checksum found for ${ARCHIVE}. Aborting."
+        exit 1
+    fi
+    ACTUAL=$(sha256sum "${TMPDIR}/${ARCHIVE}" 2>/dev/null || shasum -a 256 "${TMPDIR}/${ARCHIVE}")
+    ACTUAL=$(echo "$ACTUAL" | cut -d' ' -f1)
+    if [ "$EXPECTED" != "$ACTUAL" ]; then
+        echo "Checksum mismatch! Expected ${EXPECTED}, got ${ACTUAL}. Aborting."
+        exit 1
+    fi
+
     tar xzf "${TMPDIR}/${ARCHIVE}" -C "$TMPDIR"
     install -m 755 "${TMPDIR}/${BINARY}-${VERSION}-${TARGET}/${BINARY}" "${INSTALL_DIR}/${BINARY}"
 

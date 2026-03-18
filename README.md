@@ -34,7 +34,7 @@ Download the latest release for your platform from [Releases](https://github.com
 eddytor login
 
 # Or use an API key directly
-eddytor config set-key eak_your_api_key_here
+eddytor config set-key edd_live_<40_hex_chars>
 
 # List discovered tables
 eddytor tables
