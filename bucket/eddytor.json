@@ -6,7 +6,7 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/eddytor-labs/eddytor-cli/releases/download/v1.3.0/eddytor-1.3.0-x86_64-pc-windows-msvc.zip",
-      "hash": "51286fd06ebc36a28c11adf8dd42003a48c2b7914c47c49078548cfd5381dd1b",
+      "hash": "3a59e5b55ab602ebd52475fcd517e30aa01ab752b04760149fad8b6a71a6992a",
       "bin": "eddytor.exe"
     }
   },

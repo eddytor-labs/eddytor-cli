@@ -6,16 +6,16 @@ class Eddytor < Formula
 
   on_macos do
     url "https://github.com/eddytor-labs/eddytor-cli/releases/download/v1.3.0/eddytor-1.3.0-aarch64-apple-darwin.tar.gz"
-    sha256 "ed7a4e09f43997de026bf518a8c74f458052ddf91d7da945657aceca9497d2e7"
+    sha256 "a5e212cb1e83ca9ea7f205f50f013a9589e10ab4cdc91826b115a621ebc63149"
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/eddytor-labs/eddytor-cli/releases/download/v1.3.0/eddytor-1.3.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "73dac81dc42c0a967734d318c0594eabd7c12e9dda5c77dc1566c16d89df8b3c"
+      sha256 "61d63e69595eb7ad3fbe505b8b22e7d990d27aa1a48c099b5430e7ca9021a426"
     else
       url "https://github.com/eddytor-labs/eddytor-cli/releases/download/v1.3.0/eddytor-1.3.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "dfeb2483e58604a014728deaf69b167d0752dccc3716f386de69d179db86619c"
+      sha256 "8bf87a0b4251e3f1583b994b7c282c5440cc33e4548f327c09c8e32f2b44bdeb"
     end
   end
 
