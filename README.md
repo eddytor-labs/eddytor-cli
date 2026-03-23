@@ -25,7 +25,7 @@ scoop install eddytor
 Download the archive for your platform from https://github.com/eddytor-labs/eddytor-cli/releases and add the binary to your PATH.
 
 Supported platforms
-
+```
 ┌──────────┬─────────────────────────┐
 │ Platform │      Architecture       │
 ├──────────┼─────────────────────────┤
@@ -35,8 +35,9 @@ Supported platforms
 ├──────────┼─────────────────────────┤
 │ Windows  │ x86_64                  │
 └──────────┴─────────────────────────┘
+```
 
-Getting started
+## Getting started
 ```
 # Configure your Eddytor instance
 eddytor config set-url https://your-instance.eddytor.com
