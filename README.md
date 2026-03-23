@@ -11,16 +11,17 @@ brew install eddytor-labs/tap/eddytor
 ``` 
 ### Linux (shell script)
 
+```
 curl -fsSL https://raw.githubusercontent.com/eddytor-labs/eddytor-cli/main/install.sh | sh
 ```
 ### Windows (Scoop)
+
 ```
 scoop bucket add eddytor https://github.com/eddytor-labs/homebrew-tap
 scoop install eddytor
 ```
 
 ### Manual
-
 Download the archive for your platform from https://github.com/eddytor-labs/eddytor-cli/releases and add the binary to your PATH.
 
 Supported platforms
