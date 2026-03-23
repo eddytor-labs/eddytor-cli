@@ -1,58 +1,59 @@
 # Eddytor CLI
 
-  The official command-line interface for [Eddytor](https://eddytor.com) — query, manage, and explore Delta Lake tables from your terminal.
+The official command-line interface for [Eddytor](https://eddytor.com) — query, manage, and explore Delta Lake tables from your terminal.
 
-  ## Installation
+## Installation
 
-  ### macOS (Homebrew)
+### macOS (Homebrew)
 
-  ```bash
-  brew install eddytor-labs/tap/eddytor
+```bash
+brew install eddytor-labs/tap/eddytor
+``` 
+### Linux (shell script)
 
-  Linux (shell script)
+curl -fsSL https://raw.githubusercontent.com/eddytor-labs/eddytor-cli/main/install.sh | sh
+```
+### Windows (Scoop)
+```
+scoop bucket add eddytor https://github.com/eddytor-labs/homebrew-tap
+scoop install eddytor
+```
 
-  curl -fsSL https://raw.githubusercontent.com/eddytor-labs/eddytor-cli/main/install.sh | sh
+### Manual
 
-  Windows (Scoop)
+Download the archive for your platform from https://github.com/eddytor-labs/eddytor-cli/releases and add the binary to your PATH.
 
-  scoop bucket add eddytor https://github.com/eddytor-labs/homebrew-tap
-  scoop install eddytor
+Supported platforms
 
-  Manual
+┌──────────┬─────────────────────────┐
+│ Platform │      Architecture       │
+├──────────┼─────────────────────────┤
+│ macOS    │ Apple Silicon (aarch64) │
+├──────────┼─────────────────────────┤
+│ Linux    │ x86_64, aarch64         │
+├──────────┼─────────────────────────┤
+│ Windows  │ x86_64                  │
+└──────────┴─────────────────────────┘
 
-  Download the archive for your platform from https://github.com/eddytor-labs/eddytor-cli/releases and add the binary to your PATH.
+Getting started
+```
+# Configure your Eddytor instance
+eddytor config set-url https://your-instance.eddytor.com
+eddytor config set-token <your-api-key>
 
-  Supported platforms
+# List tables
+eddytor tables
 
-  ┌──────────┬─────────────────────────┐
-  │ Platform │      Architecture       │
-  ├──────────┼─────────────────────────┤
-  │ macOS    │ Apple Silicon (aarch64) │
-  ├──────────┼─────────────────────────┤
-  │ Linux    │ x86_64, aarch64         │
-  ├──────────┼─────────────────────────┤
-  │ Windows  │ x86_64                  │
-  └──────────┴─────────────────────────┘
+# Query data
+eddytor query "SELECT * FROM my_table LIMIT 10"
 
-  Getting started
+# Describe a table
+eddytor tables describe eddytor.cfg_abc123.my_table
+```
+Documentation
 
-  # Configure your Eddytor instance
-  eddytor config set-url https://your-instance.eddytor.com
-  eddytor config set-token <your-api-key>
+See the https://eddytor.com/docs for full CLI reference.
 
-  # List tables
-  eddytor tables
+License
 
-  # Query data
-  eddytor query "SELECT * FROM my_table LIMIT 10"
-
-  # Describe a table
-  eddytor tables describe eddytor.cfg_abc123.my_table
-
-  Documentation
-
-  See the https://eddytor.com/docs for full CLI reference.
-
-  License
-
-  Proprietary — All rights reserved.
+Proprietary — All rights reserved.
