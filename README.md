@@ -41,7 +41,7 @@ Supported platforms
 ```
 # Configure your Eddytor instance
 eddytor config set-url https://your-instance.eddytor.com
-eddytor config set-token <your-api-key>
+eddytor config set-key <your-api-key>
 
 # List tables
 eddytor tables
