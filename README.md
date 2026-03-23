@@ -1,64 +1,58 @@
 # Eddytor CLI
 
-Query, manage, and explore Delta Lake tables from the terminal.
+  The official command-line interface for [Eddytor](https://eddytor.com) — query, manage, and explore Delta Lake tables from your terminal.
 
-## Installation
+  ## Installation
 
-### macOS (Homebrew)
+  ### macOS (Homebrew)
 
-```bash
-brew install eddytor-labs/tap/eddytor
-```
+  ```bash
+  brew install eddytor-labs/tap/eddytor
 
-### macOS / Linux (shell script)
+  Linux (shell script)
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/eddytor-labs/eddytor-cli/main/install.sh | sh
-```
+  curl -fsSL https://raw.githubusercontent.com/eddytor-labs/eddytor-cli/main/install.sh | sh
 
-### Windows (Scoop)
+  Windows (Scoop)
 
-```powershell
-scoop bucket add eddytor https://github.com/eddytor-labs/eddytor-cli
-scoop install eddytor
-```
+  scoop bucket add eddytor https://github.com/eddytor-labs/homebrew-tap
+  scoop install eddytor
 
-### Manual download
+  Manual
 
-Download the latest release for your platform from [Releases](https://github.com/eddytor-labs/eddytor-cli/releases) and add the binary to your PATH.
+  Download the archive for your platform from https://github.com/eddytor-labs/eddytor-cli/releases and add the binary to your PATH.
 
-## Getting started
+  Supported platforms
 
-```bash
-# Log in via browser (OAuth magic link)
-eddytor login
+  ┌──────────┬─────────────────────────┐
+  │ Platform │      Architecture       │
+  ├──────────┼─────────────────────────┤
+  │ macOS    │ Apple Silicon (aarch64) │
+  ├──────────┼─────────────────────────┤
+  │ Linux    │ x86_64, aarch64         │
+  ├──────────┼─────────────────────────┤
+  │ Windows  │ x86_64                  │
+  └──────────┴─────────────────────────┘
 
-# Or use an API key directly
-eddytor config set-key edd_live_<40_hex_chars>
+  Getting started
 
-# List discovered tables
-eddytor tables
+  # Configure your Eddytor instance
+  eddytor config set-url https://your-instance.eddytor.com
+  eddytor config set-token <your-api-key>
 
-# Query with SQL
-eddytor query "SELECT * FROM eddytor.cfg_abc.my_table LIMIT 10"
+  # List tables
+  eddytor tables
 
-# Get help
-eddytor --help
-```
+  # Query data
+  eddytor query "SELECT * FROM my_table LIMIT 10"
 
-## Updating
+  # Describe a table
+  eddytor tables describe eddytor.cfg_abc123.my_table
 
-```bash
-# Homebrew
-brew upgrade eddytor
+  Documentation
 
-# Scoop
-scoop update eddytor
+  See the https://eddytor.com/docs for full CLI reference.
 
-# Shell script (re-run the installer)
-curl -fsSL https://raw.githubusercontent.com/eddytor-labs/eddytor-cli/main/install.sh | sh
-```
+  License
 
-## License
-
-Proprietary. See [eddytor.com](https://eddytor.com) for details.
+  Proprietary — All rights reserved.
