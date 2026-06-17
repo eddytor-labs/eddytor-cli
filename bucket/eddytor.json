@@ -7,6 +7,7 @@
     "64bit": {
       "url": "https://github.com/eddytor-labs/eddytor-cli/releases/download/v2.1.1/eddytor-2.1.1-x86_64-pc-windows-msvc.zip",
       "hash": "ac9eaa52a8ac56100e00651433205e68aca969e8da9ec3d753c258c9194966a0",
+      "extract_dir": "eddytor-2.1.1-x86_64-pc-windows-msvc",
       "bin": "eddytor.exe"
     }
   },
@@ -14,7 +15,8 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/eddytor-labs/eddytor-cli/releases/download/v$version/eddytor-$version-x86_64-pc-windows-msvc.zip"
+        "url": "https://github.com/eddytor-labs/eddytor-cli/releases/download/v$version/eddytor-$version-x86_64-pc-windows-msvc.zip",
+        "extract_dir": "eddytor-$version-x86_64-pc-windows-msvc"
       }
     }
   }
